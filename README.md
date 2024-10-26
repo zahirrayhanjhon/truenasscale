@@ -14,7 +14,7 @@ zfs create -V 32G BIGDATA/DATASET1/HA_zvol && wget https://github.com/home-assis
 ### 🛠 What It Does
 
 **Create a ZFS Volume**  
-   - The command starts by creating a ZFS volume named `HA_zvol` with a size of 32GB in the dataset `BIGDATA/DATASET1`. This volume serves as the storage space for your Home Assistant VM. **Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement. **
+   - The command starts by creating a ZFS volume named `HA_zvol` with a size of 32GB in the dataset `BIGDATA/DATASET1`. This volume serves as the storage space for your Home Assistant VM. ** Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement. **
 
 ### 🏗 Creating the Home Assistant VM
 
