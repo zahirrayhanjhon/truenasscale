@@ -42,13 +42,12 @@ zfs create -V 32G BIGDATA/DATASET1/HA_zvol && wget https://github.com/home-assis
 ## 2.................
 ### 🌟 Zvol to vhdx (hyper-v)
 
-To make a dynamically expanding VHDX file, just add the `-o subformat=dynamic` option! This ensures that the VHDX file will only grow as data is written, saving storage by allocating space only for actual data use. 🚀💾
-
-Here’s the updated command:
+Single line command:
 
 ```bash
 qemu-img convert -f raw /dev/zvol/BIGDATA/DATASET1/JHONWINDOWS-d6uam5 -O vhdx -o subformat=dynamic /mnt/BIGDATA/DATASET1/JHONWINDOWS-d6uam5.vhdx
 ```
+**Change name of zvol `JHONWINDOWS-d6uam5` and location `BIGDATA/DATASET1` in the command to your requirement.** 
 
 ✨ With this setup, you’ll have a VHDX file that efficiently manages space, expanding only when needed!
 
