@@ -71,7 +71,7 @@ Got it! Here’s the command with small details and emojis:
 
 ### Restore Command
 ```bash
-zfs destroy -r -f BIGDATA/DATASET1/HA_zvol 🗑️💥 && zfs receive BIGDATA/DATASET1/HA_zvol < /mnt/BIGDATA/DATASET1/HA_zvol_backup 📥📂
+zfs destroy -r -f BIGDATA/DATASET1/HA_zvol && zfs receive BIGDATA/DATASET1/HA_zvol < /mnt/BIGDATA/DATASET1/HA_zvol_backup
 
 ```
 
