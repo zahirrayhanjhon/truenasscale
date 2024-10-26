@@ -38,6 +38,9 @@ zfs create -V 32G BIGDATA/DATASET1/HA_zvol && wget https://github.com/home-assis
 5. **Save and Start the VM**  
    - After configuring the VM, save the settings and start the Home Assistant VM. You can access the Home Assistant interface via a web browser once it boots up.
 
+
+
+
   
 ## 2.................
 ### 🌟 Zvol to vhdx (hyper-v)
@@ -50,6 +53,9 @@ qemu-img convert -f raw /dev/zvol/BIGDATA/DATASET1/JHONWINDOWS-d6uam5 -O vhdx -o
 **Change name of zvol `JHONWINDOWS-d6uam5` and location `BIGDATA/DATASET1` in the command to your requirement.** 
 
 ✨ With this setup, you’ll have a VHDX file that efficiently manages space, expanding only when needed!
+
+
+
 
 ## 3.................
 ### 🌟 Zvol backup to filesystem(VM backup)
@@ -79,7 +85,11 @@ zfs destroy -r -f BIGDATA/DATASET1/HA_zvol && zfs receive BIGDATA/DATASET1/HA_zv
 - **🗑️💥**: Destroy the existing zvol and its snapshots.
 - **📥📂**: Restore the zvol from the backup file.
 
-- 
+
+
+
+
+
 ## 4.................
 
 ## 5.................
