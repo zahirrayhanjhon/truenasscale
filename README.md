@@ -1,6 +1,6 @@
 ## 1.................
 
-### 🌟Easy Guideline for Setting Up Home Assistant on TrueNAS 
+### 🌟Easiest way for Setting Up Home Assistant on TrueNAS scale
 
 **Overview**  
 This command sequence will create a ZFS volume for your Home Assistant virtual machine, download the latest Home Assistant operating system image, and prepare it for use on TrueNAS. By following this guide, you can set up a powerful smart home automation system in a few simple steps.
@@ -10,11 +10,12 @@ This command sequence will create a ZFS volume for your Home Assistant virtual m
 ```bash
 zfs create -V 32G BIGDATA/DATASET1/HA_zvol && wget https://github.com/home-assistant/operating-system/releases/download/13.2/haos_ova-13.2.qcow2.xz && unxz haos_ova-13.2.qcow2.xz && qemu-img convert -O raw haos_ova-13.2.qcow2 /dev/zvol/BIGDATA/DATASET1/HA_zvol
 ```
+**Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement.**
 
 ### 🛠 What It Does
 
 **Create a ZFS Volume**  
-   - The command starts by creating a ZFS volume named `HA_zvol` with a size of 32GB in the dataset `BIGDATA/DATASET1`. This volume serves as the storage space for your Home Assistant VM. **Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement.**
+   - The command starts by creating a ZFS volume named `HA_zvol` with a size of 32GB in the dataset `BIGDATA/DATASET1`. This volume serves as the storage space for your Home Assistant VM. 
 
 ### 🏗 Creating the Home Assistant VM
 
@@ -65,6 +66,7 @@ To create a backup command that checks if the snapshot exists before attempting 
 ```bash
 zfs list -t snapshot | grep -q 'BIGDATA/DATASET1/HA_zvol@backup_snapshot' || zfs snapshot BIGDATA/DATASET1/HA_zvol@backup_snapshot; zfs send BIGDATA/DATASET1/HA_zvol@backup_snapshot > /mnt/BIGDATA/DATASET1/HA_zvol_backup
 ```
+**Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement.**
 
 ### Explanation
 - **`zfs list -t snapshot`**: Lists all snapshots.
@@ -80,6 +82,7 @@ Got it! Here’s the command with small details and emojis:
 zfs destroy -r -f BIGDATA/DATASET1/HA_zvol && zfs receive BIGDATA/DATASET1/HA_zvol < /mnt/BIGDATA/DATASET1/HA_zvol_backup
 
 ```
+**Change name of zvol `HA_zvol` and location `BIGDATA/DATASET1` in the command to your requirement.**
 
 ### Summary
 - **🗑️💥**: Destroy the existing zvol and its snapshots.
